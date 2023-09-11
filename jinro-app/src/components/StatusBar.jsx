@@ -29,59 +29,65 @@ const StatusBar = (props) => {
             ></div>
           </div>
         </div>
-        <div
-          className="statusBar"
-          style={{
-            backgroundColor: "#444",
-            width: "70%",
-            display: "block",
-          }}
-        >
+        <div>
           <div
-            className="statusRealBar"
+            className="statusBar"
             style={{
-              width: "100%",
-              transformOrigin: "left",
-              backgroundColor: "lightgreen",
-              transform: `scaleX(${parseInt(state[3].study)}%)`,
+              backgroundColor: "#444",
+              width: "70%",
+              display: "block",
             }}
-          ></div>
+          >
+            <div
+              className="statusRealBar"
+              style={{
+                width: "100%",
+                transformOrigin: "left",
+                backgroundColor: "lightgreen",
+                transform: `scaleX(${parseInt(state[3].study)}%)`,
+              }}
+            ></div>
+          </div>
         </div>
-        <div
-          className="statusBar"
-          style={{
-            backgroundColor: "#444",
-            width: "70%",
-            display: "block",
-          }}
-        >
+        <div>
           <div
-            className="statusRealBar"
+            className="statusBar"
             style={{
-              width: "100%",
-              transformOrigin: "left",
-              backgroundColor: "pink",
-              transform: `scaleX(${parseInt(state[3].friend)}%)`,
+              backgroundColor: "#444",
+              width: "70%",
+              display: "block",
             }}
-          ></div>
+          >
+            <div
+              className="statusRealBar"
+              style={{
+                width: "100%",
+                transformOrigin: "left",
+                backgroundColor: "pink",
+                transform: `scaleX(${parseInt(state[3].friend)}%)`,
+              }}
+            ></div>
+          </div>
         </div>
-        <div
-          className="statusBar"
-          style={{
-            backgroundColor: "#444",
-            width: "70%",
-            display: "block",
-          }}
-        >
+        <div>
           <div
-            className="statusRealBar"
+            className="statusBar"
             style={{
-              width: "100%",
-              transformOrigin: "left",
-              backgroundColor: "crimson",
-              transform: `scaleX(${parseInt(state[3].strength)}%)`,
+              backgroundColor: "#444",
+              width: "70%",
+              display: "block",
             }}
-          ></div>
+          >
+            <div
+              className="statusRealBar"
+              style={{
+                width: "100%",
+                transformOrigin: "left",
+                backgroundColor: "crimson",
+                transform: `scaleX(${parseInt(state[3].strength)}%)`,
+              }}
+            ></div>
+          </div>
         </div>
       </div>
     </Fragment>
