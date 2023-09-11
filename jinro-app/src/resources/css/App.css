@@ -1,0 +1,102 @@
+html {
+  /* font-size: 1.1vw; */
+}
+* {
+  transition: 0.7s;
+}
+/* animateModel */
+.disapear {
+  opacity: 0 !important;
+  height: 0 !important;
+  z-index: 0 !important;
+}
+.normal {
+  z-index: 10 !important;
+}
+/* Start */
+#welcome {
+  text-align: center;
+  margin-top: 8%;
+  font-size: 2.8125rem;
+  font-weight: bold;
+  letter-spacing: 10px;
+}
+#welcome.change {
+  letter-spacing: 25px;
+  margin-top: 13%;
+  opacity: 0;
+  height: 0;
+}
+#isYourName {
+  text-align: center;
+  font-size: 2.625rem;
+}
+#yourName {
+  font-size: 62px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 75px;
+}
+#yourName.change {
+  font-size: 102px;
+  margin-top: 30px;
+}
+#nameConfirmBtns {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+#nameConfirmBtns.disapear {
+  margin-top: -30px;
+  height: auto !important;
+}
+#testImg {
+  width: 300px;
+  height: 300px;
+}
+/* 채팅 */
+#chooseForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 640px;
+}
+#prompt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+}
+#nextBtn {
+  width: 20%;
+  margin: 30px auto;
+}
+#status {
+  height: 20%;
+  padding: 15px;
+}
+#statusBars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+}
+.statusBar {
+  height: 30px;
+  margin-top: 10px;
+  margin: 10px auto;
+  border-radius: 1000px;
+  overflow: hidden;
+}
+.statusRealBar {
+  height: 30px;
+}
+/* color */
+.gray {
+  color: #999;
+}
