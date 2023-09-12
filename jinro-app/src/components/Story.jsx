@@ -37,7 +37,7 @@ const Story = (props) => {
       >
         <div className="d-flex">
           <Image src={mainCharacter}></Image>
-          <div id="chooseForm" style={{ border: "1px solid red" }}>
+          <div id="chooseForm" style={{}}>
             <Prompt state={state} stateHandler={stateHandler}></Prompt>
             <GamePlay state={state} stateHandler={stateHandler}></GamePlay>
           </div>

@@ -10,6 +10,10 @@ const StatusBar = (props) => {
     <Fragment>
       <div id="statusBars">
         <div>
+          <div>
+            <p>돈</p>
+            <p>{state[3].money.toString().padStart(2, "0")}</p>
+          </div>
           <div
             className="statusBar"
             style={{
@@ -24,12 +28,16 @@ const StatusBar = (props) => {
                 width: "100%",
                 transformOrigin: "left",
                 backgroundColor: "gold",
-                transform: `scaleX(${parseInt(state[3].money)}%)`,
+                transform: `scaleX(${parseInt(state[3].money) / 200}%)`,
               }}
             ></div>
           </div>
         </div>
         <div>
+          <div>
+            <p>공부</p>
+            <p>{state[3].study.toString().padStart(2, "0")}</p>
+          </div>
           <div
             className="statusBar"
             style={{
@@ -50,6 +58,10 @@ const StatusBar = (props) => {
           </div>
         </div>
         <div>
+          <div>
+            <p>인싸력</p>
+            <p>{state[3].friend.toString().padStart(2, "0")}</p>
+          </div>
           <div
             className="statusBar"
             style={{
@@ -70,6 +82,10 @@ const StatusBar = (props) => {
           </div>
         </div>
         <div>
+          <div>
+            <p>체력</p>
+            <p>{state[3].strength.toString().padStart(2, "0")}</p>
+          </div>
           <div
             className="statusBar"
             style={{
@@ -85,6 +101,30 @@ const StatusBar = (props) => {
                 transformOrigin: "left",
                 backgroundColor: "crimson",
                 transform: `scaleX(${parseInt(state[3].strength)}%)`,
+              }}
+            ></div>
+          </div>
+        </div>
+        <div id="lifeHappy">
+          <div>
+            <p>불만지수</p>
+            <p>{state[3].happy.toString().padStart(2, "0")}</p>
+          </div>
+          <div
+            className="statusBar"
+            style={{
+              backgroundColor: "#444",
+              width: "70%",
+              display: "block",
+            }}
+          >
+            <div
+              className="statusRealBar"
+              style={{
+                width: "100%",
+                transformOrigin: "left",
+                backgroundColor: "coral",
+                transform: `scaleX(${parseInt(state[3].happy) / 2}%)`,
               }}
             ></div>
           </div>

@@ -1,14 +1,25 @@
+@font-face {
+  font-family: "CookieOTF";
+  src: url("../CookieRunFont_OTF/CookieRun\ Regular.otf") format("woff"),
+    url("../CookieRunFont_OTF/CookieRun\ Bold.otf") format("woff"),
+    url("../CookieRunFont_OTF/CookieRun\ Black.otf") format("woff");
+}
+
 html {
   /* font-size: 1.1vw; */
 }
 * {
   transition: 0.7s;
+  font-family: "CookieOTF";
 }
 /* animateModel */
-.disapear {
+.disapear,
+.disapear * {
   opacity: 0 !important;
   height: 0 !important;
   z-index: 0 !important;
+  position: relative;
+  top: 30px;
 }
 .normal {
   z-index: 10 !important;
@@ -61,7 +72,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 640px;
 }
 #prompt {
   width: 100%;
@@ -85,6 +95,25 @@ html {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
+  grid-column-gap: 30px;
+}
+#statusBars > div {
+  display: flex;
+  gap: 25px;
+}
+#statusBars > div > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 5px;
+  font-weight: bold;
+  text-align-last: left;
+  width: 35%;
+}
+#statusBars > div > div > p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
 }
 .statusBar {
   height: 30px;
@@ -96,7 +125,36 @@ html {
 .statusRealBar {
   height: 30px;
 }
+#lifeHappy {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+#lifeHappy > div:not(.statusBar) {
+  width: 20% !important;
+}
+#today {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 60px;
+}
+#explain {
+  margin-top: 50px;
+  font-size: 26px;
+}
+#chooseYou {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin-top: 100px;
+}
 /* color */
 .gray {
   color: #999;
 }
+/* .danger {
+  color: red;
+} */

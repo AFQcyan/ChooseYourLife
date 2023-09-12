@@ -20,14 +20,17 @@ function App() {
       //index 2 : 대사 스크립트
       currIndex: 0,
       currScript: 0,
-      script: [["기본 스크립트", "기본스크립트2"]],
+      script: [["기본 스크립트", "기본스크립트2"], []],
     },
     {
       //index 3 : Status
-      money: 15,
-      study: 10,
-      friend: 10,
-      strength: 50,
+      prevGameMonth: 10,
+      gameMonth: 10,
+      money: 3000,
+      study: 20,
+      friend: 20,
+      strength: 30,
+      happy: 10,
     },
   ]);
 
