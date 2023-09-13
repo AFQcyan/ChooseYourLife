@@ -25,9 +25,6 @@ import Prompt from "./Prompt.jsx";
 import GamePlay from "./GamePlay.jsx";
 const Story = (props) => {
   const { state, stateHandler } = props;
-
-  console.log(state[1].typeNum);
-
   return (
     <Fragment>
       <Container

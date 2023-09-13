@@ -31,6 +31,13 @@ function App() {
       friend: 20,
       strength: 30,
       happy: 10,
+      randEvent: 0,
+    },
+    {
+      //index 4: ending
+      goEnd: false,
+      endCode: 0,
+      endScript: [["기본 스크립트", "기본스크립트2"], []],
     },
   ]);
 

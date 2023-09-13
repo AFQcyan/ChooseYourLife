@@ -12,7 +12,11 @@ const StatusBar = (props) => {
         <div>
           <div>
             <p>돈</p>
-            <p>{state[3].money.toString().padStart(2, "0")}</p>
+            <p>
+              {state[3].money === 0
+                ? 0
+                : state[3].money.toString().padStart(2, "0")}
+            </p>
           </div>
           <div
             className="statusBar"
@@ -36,7 +40,11 @@ const StatusBar = (props) => {
         <div>
           <div>
             <p>공부</p>
-            <p>{state[3].study.toString().padStart(2, "0")}</p>
+            <p>
+              {state[3].study === 0
+                ? 0
+                : state[3].study.toString().padStart(2, "0")}
+            </p>
           </div>
           <div
             className="statusBar"
@@ -60,7 +68,11 @@ const StatusBar = (props) => {
         <div>
           <div>
             <p>인싸력</p>
-            <p>{state[3].friend.toString().padStart(2, "0")}</p>
+            <p>
+              {state[3].friend === 0
+                ? 0
+                : state[3].friend.toString().padStart(2, "0")}
+            </p>
           </div>
           <div
             className="statusBar"
@@ -84,7 +96,11 @@ const StatusBar = (props) => {
         <div>
           <div>
             <p>체력</p>
-            <p>{state[3].strength.toString().padStart(2, "0")}</p>
+            <p>
+              {state[3].strength === 0
+                ? 0
+                : state[3].strength.toString().padStart(2, "0")}
+            </p>
           </div>
           <div
             className="statusBar"
@@ -108,7 +124,11 @@ const StatusBar = (props) => {
         <div id="lifeHappy">
           <div>
             <p>불만지수</p>
-            <p>{state[3].happy.toString().padStart(2, "0")}</p>
+            <p>
+              {state[3].happy === 0
+                ? 0
+                : state[3].happy.toString().padStart(2, "0")}
+            </p>
           </div>
           <div
             className="statusBar"

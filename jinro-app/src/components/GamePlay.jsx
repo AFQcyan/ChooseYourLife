@@ -11,7 +11,9 @@ const GamePlay = (props) => {
 
   return (
     <Container
-      className={state[1].typeNum === 1 ? "normal" : "disapear"}
+      className={
+        state[1].typeNum === 1 && !state[4].goEnd ? "normal" : "disapear"
+      }
       style={{ height: "100%" }}
     >
       <div id="status">
