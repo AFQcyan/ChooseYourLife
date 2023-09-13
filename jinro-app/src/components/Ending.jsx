@@ -6,6 +6,8 @@ import Button from "react-bootstrap/Button";
 const Ending = (props) => {
   const { state, stateHandler } = props;
 
+  
+
   const onNextScript = () => {
     stateHandler([
       {
@@ -17,19 +19,6 @@ const Ending = (props) => {
     ]);
   };
 
-  let endIdx = 0;
-  if (state[4].goEnd) {
-    if (
-      state[3].money < 1 ||
-      state[3].study < 1 ||
-      state[3].friend < 1 ||
-      state[3].strength < 1 ||
-      state[3].happy > 199
-    ) {
-      endIdx = 0;
-    }
-  }
-
   return (
     <Fragment>
       <Container
@@ -38,7 +27,7 @@ const Ending = (props) => {
         }
       >
         <div id="prompt">
-          {state[2].script[endIdx][state[4].endScriptIdx]}
+          {state[4].endScript[0][state[4].endScriptIdx]}
           <Button id="nextBtn" onClick={onNextScript}>
             다음
           </Button>
@@ -47,3 +36,5 @@ const Ending = (props) => {
     </Fragment>
   );
 };
+
+export default Ending;

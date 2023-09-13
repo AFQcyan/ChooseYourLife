@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
-import Choose from "./Choose";
+import Choose from "./Choose.jsx";
 // module
 import StatusBar from "./StatusBar";
 

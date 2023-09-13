@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
+import UserName from "./UserName";
 
 const Choose = (props) => {
   const { state, stateHandler } = props;
@@ -46,12 +47,320 @@ const Choose = (props) => {
             goEnd: true,
             endCode: 0,
             endScriptIdx: 0,
-            endScript: [["이거야", "이거야1", "이거2야", "이거3야", "이거4야"]],
+            endScript: [
+              [
+              <span className="gray">어라? {state[0].userName} 의 상태가 좀 이상하다.</span>,
+              <span className="gray">{state[0].userName}! 왜그래!</span>,
+              <span className="gray">{state[0].userName}가... 집을 나가버렸다...</span>,
+              `GAME OVER (이유 : ${
+                state[3].money + money < 1 
+                ? "돈이 없어서"
+                : state[3].study + study < 1
+                ? "성적이 낮아서"
+                : state[3].friend + friend < 1
+                ? "왕따를 당해서"
+                : state[3].strength + strength < 1
+                ? "몸이 너무 약해서"
+                : state[3].happy + happy > 199   
+                ? "스트레스를 너무 많이 받아서"
+                : "의문사"         
+              } )`
+            ]
+            ],
           },
         },
       ]);
+    } else if(state[3].gameMonth === 125) {
+      if(state[3].money + money >= 18000 &&
+        state[3].study + study >= 90 &&
+        state[3].friend + friend >= 90 &&
+        state[3].strength + strength >= 90)
+              {
+                stateHandler([
+                  {
+                    index: 4,
+                    properties: {
+                      goEnd: true,
+                      endCode: 1,
+                      endScriptIdx: 0,
+                      endScript: [
+                        [
+                        <span className="gray">졸업후 10년뒤. 나는 {state[0].userName}를 찾아갔다.</span>,
+                        <span className="gray">{state[0].userName}! 왜그래!</span>,
+                        <span className="gray">{state[0].userName}는 승려가 되어있었다.</span>,
+                        "세상의 모든것을 꺠우치고 나니, 결국 남는것은 진리더군요.",
+                        <span className="gray">나는 할말을 잃고 그자리에서 돌아나왔다.</span>,
+                        <span className="gray">완벽함의 결말이 이것이란 말인가...</span>,
+                        "엔딩 1 : 완벽한 승려 엔딩",
+                        "[새로고침으로 다시하기]"
+                      ]
+                      ],
+                    },
+                  },
+                ]);                                
+        } else if(
+          state[3].money + money >= 10000 &&
+          state[3].study + study >= 50 &&
+          state[3].friend + friend >= 50 &&
+          state[3].strength + strength >= 50
+        ){
+          const maxArr = [
+            parseInt((state[3].money + money) / 200),
+            parseInt(state[3].study + study),
+            parseInt(state[3].friend + friend),
+            parseInt(state[3].strength + strength)
+          ]
+          console.log(Math.max(...maxArr))
+          if(Math.max(...maxArr) >= 90) {
+            if(maxArr.indexOf(Math.max(...maxArr)) === 0) {
+              stateHandler([
+                {
+                  index: 4,
+                  properties: {
+                    goEnd: true,
+                    endCode: 3,
+                    endScriptIdx: 0,
+                    endScript: [
+                      [
+                      <span className="gray">10년뒤, 판교의 한 회사의 최상층으로 {state[0].userName} 를 찾아갔다.</span>,
+                      <span className="gray">{state[0].userName}! 어떻게 된거야!!</span>,
+                      <span className="gray">{state[0].userName}는 "양디컴퍼니"의 CEO가 되어있었다.</span>,
+                      "부모님. 이 영광을 당신께 돌리겠습니다. 양디컴퍼니는 부모님 것입니다.",
+                      "엔딩 3 : 은혜갚은 CEO 엔딩"
+                    ]
+                    ],
+                  },
+                },
+              ]);  
+            } else if (maxArr.indexOf(Math.max(...maxArr)) === 1) {
+              stateHandler([
+                {
+                  index: 4,
+                  properties: {
+                    goEnd: true,
+                    endCode: 4,
+                    endScriptIdx: 0,
+                    endScript: [
+                      [
+                      <span className="gray">4년뒤, 유명 인서울 대학병원으로 {state[0].userName} 를 찾아갔다.</span>,
+                      <span className="gray">{state[0].userName}! 여기.. 있었구나</span>,
+                      <span className="gray">{state[0].userName}는 유명 대학병원 원장이 되어있었다.</span>,
+                      "부모님은..죽지 않아요!",
+                      "엔딩 4 : 명의 - 메르시 의사 엔딩"
+                    ]
+                    ],
+                  },
+                },
+              ]);                
+            } else if (maxArr.indexOf(Math.max(...maxArr)) === 2) {
+              stateHandler([
+                {
+                  index: 4,
+                  properties: {
+                    goEnd: true,
+                    endCode: 5,
+                    endScriptIdx: 0,
+                    endScript: [
+                      [
+                      <span className="gray">4년뒤, 한 드라마 촬영장으로 {state[0].userName} 를 찾아갔다.</span>,
+                      <span className="gray">{state[0].userName}! 너였구나!</span>,
+                      <span className="gray">{state[0].userName}는 누구나 알법한 유명 인플루언서가 되어있었다.</span>,
+                      "여러분! 여길 봐주세요! 이분이 저를 길러주신 부모님이십니다! 많은 환호 부탁드려요!",
+                      "엔딩 5 : 부모랑 나랑~ 인플루언서 엔딩"
+                    ]
+                    ],
+                  },
+                },
+              ]);  
+            } else if (maxArr.indexOf(Math.max(...maxArr)) === 3)  {
+              stateHandler([
+                {
+                  index: 4,
+                  properties: {
+                    goEnd: true,
+                    endCode: 6,
+                    endScriptIdx: 0,
+                    endScript: [
+                      [
+                      <span className="gray">8년뒤, 올림픽 경기장으로 {state[0].userName} 를 찾아갔다.</span>,
+                      <span className="gray">{state[0].userName}! 너였구나!</span>,
+                      <span className="gray">{state[0].userName}는 금메달 2연패에 빛나는 육상선수가 되어있었다.</span>,
+                      "내 왼손에는 금메달~ 오른손에는 트로피~ 누구도 내 속도를 따라오지 못해!",
+                      "엔딩 6 : 속도의 한계를 넘어. 육상선수 엔딩"
+                    ]
+                    ],
+                  },
+                },
+              ]); 
+            } 
+          } else {
+            stateHandler([
+              {
+                index: 4,
+                properties: {
+                  goEnd: true,
+                  endCode: 2,
+                  endScriptIdx: 0,
+                  endScript: [
+                    [
+                    <span className="gray">5년뒤, 판교의 한 회사로 {state[0].userName} 를 찾아갔다.</span>,
+                    <span className="gray">{state[0].userName}! 안녕!</span>,
+                    <span className="gray">{state[0].userName}는 한 중견기업의 대리로 회사를 다니고 있었다.</span>,
+                    "그래. 남들처럼만 건강하게 살아다오. 내 일평생의 부탁이란다.",
+                    "엔딩 2 : 그저 남들처럼만. 회사원 엔딩"
+                  ]
+                  ],
+                },
+              },
+            ]);           
+          }
+        } else if (
+          state[3].money + money >= 10000 ||
+          state[3].study + study >= 40 ||
+          state[3].friend + friend >= 40 ||
+          state[3].strength + strength >= 40
+        ) {
+          const maxArr = [
+            parseInt((state[3].money + money) / 200),
+            parseInt(state[3].study + study),
+            parseInt(state[3].friend + friend),
+            parseInt(state[3].strength + strength)
+          ]
+          console.log(Math.max(...maxArr))
+          if(Math.max(...maxArr) >= 70) {
+            if(maxArr.indexOf(Math.max(...maxArr)) === 0) {
+              stateHandler([
+                {
+                  index: 4,
+                  properties: {
+                    goEnd: true,
+                    endCode: 7,
+                    endScriptIdx: 0,
+                    endScript: [
+                      [
+                      <span className="gray">7년뒤, 강원의 한 랜드로 {state[0].userName} 를 찾아갔다.</span>,
+                      <span className="gray">{state[0].userName}! 어떻게 된거야!!</span>,
+                      <span className="gray">{state[0].userName}는 도박의 신이 되어있었다.</span>,
+                      "부모님. 카드 한장 뽑아보시죠. 제가 승리로 이끌어드리겠습니다.",
+                      <span className="gray">당신은 그말을 애써 무시한채 그대로 돌아나왔다.</span>,
+                      <span className="gray">'난 너가 그런길로 빠지길 바란게 아니다..'</span>,
+                      "엔딩 7 : 미운오리 도박꾼 엔딩"
+                    ]
+                    ],
+                  },
+                },
+              ]);  
+            } else if (maxArr.indexOf(Math.max(...maxArr)) === 1) {
+              stateHandler([
+                {
+                  index: 4,
+                  properties: {
+                    goEnd: true,
+                    endCode: 8,
+                    endScriptIdx: 0,
+                    endScript: [
+                      [
+                      <span className="gray">4년뒤, 유명 인서울 대학교로 {state[0].userName} 를 찾아갔다.</span>,
+                      <span className="gray">{state[0].userName}! 여기 있었구나..</span>,
+                      <span className="gray">{state[0].userName}는 충실한 대학원생이 되어있었다.</span>,
+                      "더 깊은 지식을 연구하는것도 좋지만, 돈을 버는게 더 좋지 않겠니...?",
+                      "엔딩 8 : 노-예 대학원생 엔딩"
+                    ]
+                    ],
+                  },
+                },
+              ]);                
+            } else if (maxArr.indexOf(Math.max(...maxArr)) === 2) {
+              stateHandler([
+                {
+                  index: 4,
+                  properties: {
+                    goEnd: true,
+                    endCode: 9,
+                    endScriptIdx: 0,
+                    endScript: [
+                      [
+                      <span className="gray">3년뒤, 홍대의 한 클럽으로 {state[0].userName} 를 잡으러? 갔다.</span>,
+                      <span className="gray">{state[0].userName}! 너 또 여기왔니?</span>,
+                      <span className="gray">{state[0].userName}는 홍대 클럽에서 헌팅 전문가가 되어있었다.</span>,
+                      "니 여자는 이제 내껍니다. 내 마음대로 할 수 있다는 겁니다.",
+                      <span className="gray">그래... 너가 행복하다면야</span>,
+                      "엔딩 9 : 카사노바 클러버 엔딩"
+                    ]
+                    ],
+                  },
+                },
+              ]);  
+            } else if (maxArr.indexOf(Math.max(...maxArr)) === 3)  {
+              stateHandler([
+                {
+                  index: 4,
+                  properties: {
+                    goEnd: true,
+                    endCode: 10,
+                    endScriptIdx: 0,
+                    endScript: [
+                      [
+                      <span className="gray">8년뒤, 김포공항으로 {state[0].userName} 를 찾아갔다.</span>,
+                      <span className="gray">{state[0].userName}! 나야 나!</span>,
+                      <span className="gray">{state[0].userName}는 SYP 전속 경호팀장이 되어있었다.</span>,
+                      "비키세요! 비키세요! 사생팬에게 자비는 없습니다!",
+                      <span className="gray">{state[0].userName}애가 듬직..하니 좋네..ㅎㅎ</span>,
+                      "엔딩 10 : 단단-묵-직 경호원 엔딩"
+                    ]
+                    ],
+                  },
+                },
+              ]); 
+            } 
+        } else {
+          stateHandler([
+            {
+              index: 4,
+              properties: {
+                goEnd: true,
+                endCode: 11,
+                endScriptIdx: 0,
+                endScript: [
+                  [
+                  <span className="gray">10년뒤, 서현의 한 옥탑방으로 {state[0].userName} 를 찾아갔다.</span>,
+                  <span className="gray">{state[0].userName}! 문열어!</span>,
+                  <span className="gray">{state[0].userName}는.... 안타깝게도 백수로 살고 있었다.</span>,
+                  "저도 저 나름대로 노력하고 있으니까, 이제 제발 그만오세요.",
+                  <span className="gray">당신은 매정한 {state[0].userName} 의 말을 비웃듯 코웃음친다.</span>,
+                  <span className="gray">그리고선, 뒤돌아 사라진다.</span>,
+                  "엔딩 11 : 자유가 최고야 백수 엔딩"
+                ]
+                ],
+              },
+            },
+          ]); 
+        }
+    } else {
+      stateHandler([
+        {
+          index: 4,
+          properties: {
+            goEnd: true,
+            endCode: 12,
+            endScriptIdx: 0,
+            endScript: [
+              [
+              <span className="gray">12년뒤, 서현의 한 교회로 {state[0].userName} 를.. 만나러 간다.</span>,
+              <span className="gray">{state[0].userName}!....</span>,
+              <span className="gray">{state[0].userName}는.... 더이상 우리가 알던 그자가 아니었다.</span>,
+              "신이..우리를 구원하신다! 태양만세! 태양만세! 우리의 신이 곧 세상을 목도하신다!",
+              <span className="gray">당신은 이미 흐려진 그의 눈을 보며 나지막히 이야기 한다.</span>,
+              <span className="gray">`잘 키워주지 못해.. 미안하구나..`</span>,
+              "엔딩 12 : 광란의 이교도(사이비) 엔딩"
+            ]
+            ],
+          },
+        },
+      ]); 
     }
-  };
+  }
+};
 
   const reloadingScript = [
     [
@@ -97,7 +406,7 @@ const Choose = (props) => {
           ? "있는 돈으로 주식이나 좀 해볼까...?이거야~!"
           : "편의점 알바나 해야지 뭐..."
       }`,
-      state[3].study > 80
+      state[3].study >= 80
         ? "(돈 +5000, 공부 +10, 인싸력 -10, 불만지수 +35)"
         : state[3].strength >= 80
         ? "(돈 +3500, 인싸력 -10, 체력 +15, 불만지수 +50)"
@@ -118,7 +427,7 @@ const Choose = (props) => {
         ? "흠.. 잘모르겠지만 대충은 알겠네. 커피먹고 더 해야겠다."
         : "아잇 모르겠다 ..- 1등아 이거 어떻게 하는거야ㅏㅓ??",
       state[3].happy > 175
-        ? "(돈 -1200, 체력 -10.... 돈만 날렸다...)"
+        ? "(돈 -1250, 체력 -10.... 돈만 날렸다...)"
         : state[3].study > 70
         ? "(돈 -500, 공부 +20, 체력 -10, 불만지수 +20)"
         : state[3].study > 35
@@ -128,14 +437,14 @@ const Choose = (props) => {
     [
       "으..몸도 찌뿌둥한데 가서 헬스나 해야겠다.",
       "오늘은 어디를 조져볼까?",
-      state[3].happy > 150
+      state[3].happy > 170
         ? "하ㅏㅏ 이 스트레스를 풀어야 겠다. 풀업 300개 가즈아ㅏ"
         : state[3].money > 18000
         ? "PT 쌤 잘 부탁드립니다 ^^ 오늘은 어디부터 할까요?"
         : state[3].strength > 60
         ? "ㅇㅋ 오늘은 하체 조진다 중량스쿼트 딱대"
         : "아.. 다칠거 같은디.. 일단 살살 해야겠다.",
-      state[3].happy > 190
+      state[3].happy > 180
         ? state[3].randEvent > 0.5
           ? "(돈 -4000, 체력 -15, 불만지수 +80.. 크게 다쳐버렸다..)"
           : "(돈 -1200, 인싸력 +5, 체력 +30, 불만지수 -50. 운동 대성공!)"
@@ -158,17 +467,17 @@ const Choose = (props) => {
       state[3].happy > 190
         ? state[3].randEvent < 0.2
           ? "(돈 -5000, 인싸력 -20, 불만지수 +100.. 클럽에서 도둑맞았다..)"
-          : "(돈 -600, 인싸력 +30, 체력 -10, 불만지수 -65. 여자 번호땄다!)"
+          : "(돈 -1600, 인싸력 +30, 체력 -10, 불만지수 -65. 여자 번호땄다!)"
         : state[3].friend > 90
         ? "(돈 -2500, 공부 +5, 인싸력 +100, 불만지수 -80)"
         : state[3].friend > 40
-        ? "(돈 -600, 인싸력 +10, 체력 +5, 불만지수 -45)"
-        : "(돈 -600, 인싸력 -5, 불만지수 +40)",
+        ? "(돈 -1600, 인싸력 +10, 체력 +5, 불만지수 -45)"
+        : "(돈 -1600, 인싸력 -5, 불만지수 +40)",
     ],
     [
       "하 C바 학교 가야되네. 가기 싫다가기 싫다가기 싫",
       "그래도 가야지...무어 어쩌겠어..",
-      state[3].happy > 190
+      state[3].happy > 180
         ? state[3].randEvent < 0.25
           ? "하.. 야 김민수. 너 오늘 죽X야 겠다. 나 따라와"
           : "선생님.. 저 스트레스가 주체가 안돼요,, 어쩌죠...?"
@@ -187,7 +496,7 @@ const Choose = (props) => {
           ? "어..민규야.. 어 니가 시킨 숙제 다했어.... 고마워..."
           : "하 이번 기말 범위 실화냐 야자까지 풀로 채워야겠다..."
         : "아 몰랑 그냥 그럭저럭 놀다 가야지 히힛",
-      state[3].happy > 190
+      state[3].happy > 180
         ? state[3].randEvent < 0.25
           ? "(모든 스택 최저치로 감소. 학교폭력 가해자로 처벌 받았습니다.)"
           : "(공부 +5, 인싸력 +5, 불만지수 -50.. 상담사에게 상담받았습니다...)"
@@ -205,7 +514,7 @@ const Choose = (props) => {
           : state[3].friend < 20 && state[3].money < 10000
           ? "(돈 +300, 공부 +5, 체력 -5, 불만지수 +25)"
           : "(공부 +20, 불만지수 +10)"
-        : "(돈 제외 모두 +5, 불만지수 +10)",
+        : "(돈 제외 모두 +5, 불만지수 +20)",
     ],
     [
       "...............",
@@ -255,7 +564,7 @@ const Choose = (props) => {
       {
         index: 3,
         properties:
-          state[3].study > 80
+          state[3].study >= 80
             ? updateState(5000, 10, -10, 0, 35)
             : state[3].strength >= 80
             ? updateState(3500, 0, -10, 15, 50)
@@ -324,7 +633,7 @@ const Choose = (props) => {
       {
         index: 3,
         properties:
-          state[3].happy > 150
+          state[3].happy > 170
             ? state[3].randEvent > 0.5
               ? updateState(-4000, 0, 0, -15, 80)
               : updateState(-1200, 0, 5, 30, -50)
@@ -390,7 +699,7 @@ const Choose = (props) => {
       {
         index: 3,
         properties:
-          state[3].happy > 190
+          state[3].happy > 180
             ? state[3].randEvent < 0.1
               ? updateState(-20000, -100, -100, -100, 1000)
               : updateState(0, 5, 5, 0, -50)
@@ -398,7 +707,7 @@ const Choose = (props) => {
             ? updateState(-1000, 0, 10, 0, -75)
             : state[3].friend > 80
             ? updateState(1500, 0, 35, -5, -30)
-            : state[3].strength > 90
+            : state[3].strength > 80
             ? state[3].happy > 160
               ? updateState(-600, 0, 5, 0, -30)
               : updateState(0, -5, -5, 25, 40)
@@ -440,7 +749,7 @@ const Choose = (props) => {
                   index: 4,
                   properties: {
                     goEnd: true,
-                    endCode: 0,
+                    endCode: 666,
                   },
                 },
               ])
