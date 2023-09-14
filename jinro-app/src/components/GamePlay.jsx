@@ -22,7 +22,6 @@ const GamePlay = (props) => {
       <div id="games">
         <p id="today">
           {state[0].userName} : {Math.floor(state[3].gameMonth / 10) + "월"}
-          <Button variant="warning">상점 가기</Button>
         </p>
         <p id="explain">
           {state[2].script[1][Math.floor(state[3].gameMonth / 10) - 1]}

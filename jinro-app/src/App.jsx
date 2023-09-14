@@ -26,11 +26,11 @@ function App() {
       //index 3 : Status
       prevGameMonth: 10,
       gameMonth: 10,
-      money: 3500,
-      study: 20,
-      friend: 20,
-      strength: 25,
-      happy: 5,
+      money: 4000,
+      study: 40,
+      friend: 40,
+      strength: 50,
+      happy: 0,
       randEvent: 0,
     },
     {
@@ -38,8 +38,8 @@ function App() {
       goEnd: false,
       endCode: 0,
       endScript: [["기본 스크립트", "기본스크립트2"], []],
-      endScriptIdx: 0
-
+      endScriptIdx: 0,
+      KILLER: false,
     },
   ]);
 

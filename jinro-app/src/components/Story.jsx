@@ -34,37 +34,43 @@ const Story = (props) => {
         }
       >
         <div className="d-flex">
-          <Image src={
-            !state[4].goEnd || state[1].typeNum !== 1
-            ? mainCharacter
-            : state[4].endCode == 0 && state[1].typeNum === 1
-            ? Died
-            : state[4].endCode == 1 && state[1].typeNum === 1
-            ? Sunim
-            : state[4].endCode == 2 && state[1].typeNum === 1
-            ? BusinessMan
-            : state[4].endCode == 3 && state[1].typeNum === 1
-            ? CEO
-            : state[4].endCode == 4 && state[1].typeNum === 1
-            ? Doctor
-            : state[4].endCode == 5 && state[1].typeNum === 1
-            ? Influensor
-            : state[4].endCode == 6 && state[1].typeNum === 1
-            ? Athlete
-            : state[4].endCode == 7 && state[1].typeNum === 1
-            ? Gambler
-            : state[4].endCode == 8 && state[1].typeNum === 1
-            ? NoYeah
-            : state[4].endCode == 9 && state[1].typeNum === 1
-            ? Cluber
-            : state[4].endCode == 10 && state[1].typeN0um === 1
-            ? SafeGuard
-            : state[4].endCode == 11 && state[1].typeNum === 1
-            ? BaekSu
-            : state[4].endCode == 12 && state[1].typeNum === 1
-            ? SiBi
-            : SerialKiller
-            }></Image>
+          <Image
+            src={
+              !state[4].goEnd || state[1].typeNum !== 1
+                ? mainCharacter
+                : state[4].endCode === 0 && state[1].typeNum === 1
+                ? Died
+                : state[4].endCode === 1 && state[1].typeNum === 1
+                ? Sunim
+                : state[4].endCode === 2 && state[1].typeNum === 1
+                ? BusinessMan
+                : state[4].endCode === 3 && state[1].typeNum === 1
+                ? CEO
+                : state[4].endCode === 4 && state[1].typeNum === 1
+                ? Doctor
+                : state[4].endCode === 5 && state[1].typeNum === 1
+                ? Influensor
+                : state[4].endCode === 6 && state[1].typeNum === 1
+                ? Athlete
+                : state[4].endCode === 7 && state[1].typeNum === 1
+                ? Gambler
+                : state[4].endCode === 8 && state[1].typeNum === 1
+                ? NoYeah
+                : state[4].endCode === 9 && state[1].typeNum === 1
+                ? Cluber
+                : state[4].endCode === 10 && state[1].typeNum === 1
+                ? SafeGuard
+                : state[4].endCode === 11 && state[1].typeNum === 1
+                ? BaekSu
+                : state[4].endCode === 12 && state[1].typeNum === 1
+                ? SiBi
+                : state[4].endCode === 13 && state[1].typeNum === 1
+                ? Prisoner
+                : state[4].endCode === 14 && state[1].typeNum === 1
+                ? YangAChi
+                : SerialKiller
+            }
+          ></Image>
           <div id="chooseForm" style={{}}>
             <Prompt state={state} stateHandler={stateHandler}></Prompt>
             <GamePlay state={state} stateHandler={stateHandler}></GamePlay>
