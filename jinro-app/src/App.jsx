@@ -26,11 +26,11 @@ function App() {
       //index 3 : Status
       prevGameMonth: 10,
       gameMonth: 10,
-      money: 4000,
-      study: 40,
-      friend: 40,
-      strength: 50,
-      happy: 0,
+      money: 3500,
+      study: 35,
+      friend: 35,
+      strength: 40,
+      happy: 10,
       randEvent: 0,
     },
     {
