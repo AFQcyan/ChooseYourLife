@@ -11,8 +11,7 @@ const Start = (props) => {
     <Fragment>
       <Container
         className={
-          // num0 : state[1].currentPage === "Start" ? "normal col-12" : "disapear col-12"
-          "normal col-12"
+          state[1].currentPage === "Start" ? "normal col-12" : "disapear col-12"
         }
       >
         <h1 id="welcome" className={state[0].nameInputed ? "change" : "normal"}>

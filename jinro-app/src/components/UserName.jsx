@@ -103,7 +103,7 @@ const UserName = (props) => {
         id="nameConfirmBtns"
         className={state[0].nameInputed ? "normal" : "disapear"}
       >
-        <Button variant="outline-success" onClick={userNameComfirmed/*num3 : userNameComfirmed*/}>
+        <Button variant="outline-success" onClick={userNameComfirmed}>
           예
         </Button>
         <Button variant="outline-danger" onClick={userNameRejected}>
