@@ -30,7 +30,8 @@ const Story = (props) => {
     <Fragment>
       <Container
         className={
-          state[1].currentPage === "Story" ? "normal col-12" : "disapear col-12"
+          // num1 : state[1].currentPage === "Story" ? "normal col-12" : "disapear col-12"
+          "disapear col-12"
         }
       >
         <div className="d-flex">
@@ -73,7 +74,7 @@ const Story = (props) => {
           ></Image>
           <div id="chooseForm" style={{}}>
             <Prompt state={state} stateHandler={stateHandler}></Prompt>
-            <GamePlay state={state} stateHandler={stateHandler}></GamePlay>
+            {/* num4 : <GamePlay state={state} stateHandler={stateHandler}></GamePlay> */}
             <Ending state={state} stateHandler={stateHandler}></Ending>
           </div>
         </div>

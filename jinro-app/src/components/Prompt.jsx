@@ -34,7 +34,7 @@ const Prompt = (props) => {
     <Fragment>
       <Container className={state[1].typeNum !== 1 ? "normal" : "disapear"}>
         <div id="prompt">
-          {state[2].script[state[1].typeNum][state[2].currIndex]}
+          {/* num2 : {state[2].script[state[1].typeNum][state[2].currIndex]} */}
           <Button id="nextBtn" onClick={onNextScript}>
             다음
           </Button>
